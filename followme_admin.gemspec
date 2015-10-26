@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = FollowmeAdmin::VERSION
   s.authors     = ["Amol Udage"]
   s.email       = ["amoludage@joshsoftware.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of FollowmeAdmin."
-  s.description = "TODO: Description of FollowmeAdmin."
+  s.homepage    = ""
+  s.summary     = "Summary of FollowmeAdmin."
+  s.description = "Description of FollowmeAdmin."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
