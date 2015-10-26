@@ -14,3 +14,4 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 gem 'rails_admin'
+gem 'pg', '~> 0.18.2'
