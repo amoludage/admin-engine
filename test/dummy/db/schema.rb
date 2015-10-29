@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151026132931) do
+ActiveRecord::Schema.define(version: 20151028133029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,11 +143,34 @@ ActiveRecord::Schema.define(version: 20151026132931) do
   end
 
   create_table "posts", force: true do |t|
+    t.text     "body"
     t.string   "title"
-    t.string   "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "short_desc"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "state"
+    t.string   "font_style"
+    t.datetime "published_at"
+    t.string   "slug"
+    t.string   "unique_token"
+    t.string   "cover_photo_url"
   end
+
+  add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
+
+  create_table "rails_admin_histories", force: true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      limit: 2
+    t.integer  "year",       limit: 8
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
@@ -179,11 +202,39 @@ ActiveRecord::Schema.define(version: 20151026132931) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "username"
-    t.string   "city"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "email",                  default: "",      null: false
+    t.string   "encrypted_password",     default: "",      null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,       null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "username",               default: "",      null: false
+    t.boolean  "anonymous",              default: false
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.text     "short_bio"
+    t.string   "token"
+    t.string   "header_type",            default: "plain"
+    t.text     "sharing_preference"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "slug"
+    t.string   "headline"
+    t.string   "status"
+    t.boolean  "enable_comments",        default: false
   end
+
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end

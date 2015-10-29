@@ -3,6 +3,7 @@ PATH
   specs:
     followme_admin (0.0.1)
       rails (~> 4.1.7)
+      rails_admin (~> 0.7.0)
 
 GEM
   remote: https://rubygems.org/
