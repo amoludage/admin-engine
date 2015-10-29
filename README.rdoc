@@ -2,4 +2,5 @@
 
 This project rocks and uses MIT-LICENSE.
 
-Run http://localhost:3000/followme_admin/admin to check admin functionality.
+
+Run http://localhost:3000/followme_admin/admin command on rails API to check admin functionality.
