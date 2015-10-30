@@ -1,5 +1,7 @@
 en:
   admin:
+    flash:
+      user_destroy_successful: "User disabled successful"
     form:
       are_you_sure_you_want_to_disable_the_object: "Are you sure you want to disable this %{model_name}"
       are_you_sure_you_want_to_Enable_the_object: "Are you sure you want to enable this %{model_name}"
