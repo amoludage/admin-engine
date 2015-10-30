@@ -13,5 +13,5 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
-gem 'rails_admin'
+gem 'rails_admin', "~> 0.6.7"
 gem 'pg', '~> 0.18.2'

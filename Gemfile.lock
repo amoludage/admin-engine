@@ -131,7 +131,7 @@ PLATFORMS
 DEPENDENCIES
   followme_admin!
   pg (~> 0.18.2)
-  rails_admin
+  rails_admin (~> 0.6.7)
 
 BUNDLED WITH
    1.10.6
