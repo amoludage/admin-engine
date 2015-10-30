@@ -24,7 +24,7 @@ module RailsAdmin
         register_instance_option :visible? do
           if bindings[:object].class.base_class.name != 'User' || !bindings[:object].login_disabled?
             register_instance_option :link_icon do
-              'icon-remove'
+              'icon-remove-circle'
             end
           else
             register_instance_option :link_icon do

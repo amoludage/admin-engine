@@ -1,0 +1,7 @@
+en:
+  admin:
+    form:
+      are_you_sure_you_want_to_disable_the_object: "Are you sure you want to disable this %{model_name}"
+      are_you_sure_you_want_to_Enable_the_object: "Are you sure you want to enable this %{model_name}"
+      this_user_should_not_be_able_to_login: " After disabling, the user will not be able to login."
+      this_user_should_be_able_to_login: " After enabling, the user will be able to login."
