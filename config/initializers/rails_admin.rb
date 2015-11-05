@@ -29,7 +29,7 @@ RailsAdmin.config do |config|
 
   config.authorize_with do
     authenticate_or_request_with_http_basic('Site Message') do |username, password|
-      username == 'admin' && password == 'josh1234'
+      username == 'username' && password == 'password'
     end
   end
 
